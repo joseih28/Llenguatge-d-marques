@@ -16,14 +16,14 @@ h1 {
     margin-top: 15px;
     color: white;
     border-radius: 1em;
-    
 }
 
-
+h1 {
+    opactiy: 0.99;
+}
 
 form {
     background: linear-gradient(135deg, #004d00, #000000, #003366);
-    
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 1em;
     max-width: 600px;
@@ -32,16 +32,22 @@ form {
     color: white; 
 }
 
-input {
+form {
+    margin-bottom: 1emvh;
+}
 
+input {
     margin: .5em;
     padding: 0.3em;
     font-size: 1.2em;
     border-radius: 0.5em;
     border: 1px solid gray;
-
-    
 }
+
+input:clicked {
+    border-color: blue;
+}
+
 input[type="file"] {
     font-family: 'Courier New'; 
     font-size: 16px;             
@@ -49,19 +55,36 @@ input[type="file"] {
 
 button {
     padding: 0.5em;
-    font-size: 1,3em;
+    font-size: 1.3em;
     margin: 1em;
     width: 20%;
     border-radius: .5em;
     border: none;
     background-color: white;
-    
 }
+
+button {
+    position: center;
+}
+
 button:hover {
-        background: linear-gradient(135deg, #004d00, #000000, #003366);
-        color: white;
+    background: linear-gradient(135deg, #004d00, #000000, #003366);
+    color: white;
 }
+
+button:hover {
+    trasition: 0.3s;
+}
+
 .personales {
     display: flex;
     flex-direction: column;
+}
+
+.personales label {
+    line-height:;
+}
+
+input ~> label {
+    color: red;
 }
