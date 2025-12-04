@@ -85,6 +85,7 @@ button:hover {
     line-height:;
 }
 
-input ~> label {
+input label {
     color: red;
 }
+
