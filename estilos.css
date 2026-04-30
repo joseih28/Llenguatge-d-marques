@@ -1,0 +1,61 @@
+/* He visto que poninedo el !important prevalece sobre algun estilo de fuera como puede ser bootstrap y por eso lo he usado, luego he usado de la pagina de bootstrap el card para hacer la caja bien */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #536a82;
+}
+
+/* Paleta de colores */
+.color-primario { color: #001e63d9; }
+.color-secundario { color: aquamarine; }
+.color-peligro { color: crimson; }
+
+.fondo-primario { background-color: #0dcaf0; }
+.fondo-secundario { background-color: aquamarine; }
+.fondo-peligro { background-color: crimson; }
+
+/* Card sin sombras */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Tabla */
+.table-dark th {
+    background-color: #001e63d9 !important;
+    color: white !important;
+}
+
+/* Botones */
+.btn-warning,
+.btn-danger,
+.btn-outline-info {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.btn-warning:hover {
+    background-color: rgb(217, 255, 0) !important;
+}
+
+.btn-danger {
+    background-color: crimson !important;
+}
+
+.btn-danger:hover {
+    background-color: rgb(255, 0, 0) !important;
+}
+
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus,
+.btn:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: #999 !important;
+}

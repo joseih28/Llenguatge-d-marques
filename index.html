@@ -1,65 +1,115 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad formularios</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/icon_form.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <title>CRUD</title>
 </head>
 
-<body>
-    <h1 style="color: #cccccc;">Solicitud de contacto Academia Ingles</h1>
+<body class="bg-light">
 
-    <img src="img/banner.png">
+    <div class="container mt-5">
 
-    <form action="#" method="post">
-        <fieldset class="personales">
-            <legend>Datos personales</legend>
+        <h1 class="mb-4 text-center color-primario">Gestión de Préstamos</h1>
 
-            <label>Nombre</label>
-            <input id="Nombre" type="text" placeholder="Tu nombre aqui">
+        <!-- CARD DEL FORMULARIO -->
+        <div class="card sombra-suave redondeado mb-4">
+            <div class="card-body">
 
-            <label for="mail">Mail</label>
-            <input type="email" id="mail" placeholder="Tu email aqui">
+                <h4 class="mb-3">Nueva solicitud</h4>
 
-            <label>Telefono</label>
-            <input type="tel" id="tlf" placeholder="+34 555 555 555">
+                <div class="row g-3">
 
-            <label for="pwd">Contraseña</label>
-            <input type="password" id="pwd" placeholder="Introduce tu contraseña">
+                    <!-- Nombre -->
+                    <div class="col-md-6">
+                        <label for="nombrePersona" class="form-label">Nombre del alumno</label>
+                        <input type="text" id="nombrePersona" class="form-control" placeholder="Escribe tu nombre">
+                    </div>
 
-            <label for="edad">Fecha de nacimiento</label>
-            <input type="date" id="edad">
+                    <!-- Actividad -->
+                    <div class="col-md-6">
+                        <label for="actividadSeleccionada" class="form-label">Material</label>
+                        <select id="actividadSeleccionada" class="form-select">
+                            <option value="">Selecciona el material de préstamo</option>
+                            <option value="Robotica">Cargadores</option>
+                            <option value="DiseñoWeb">Ratones</option>
+                            <option value="Ofimatica">Portátiles</option>
+                            <option value="Edicion">Otros</option>
+                        </select>
+                    </div>
 
-            <label for="dni">DNI</label>
-            <input type="file" id="dni">
-        </fieldset>
+                    <!-- Turno -->
+                    <div class="col-md-6">
+                        <label class="form-label">Turno</label>
 
-        <fieldset>
-            <legend>Horario</legend>
+                        <div class="form-check">
+                            <input type="radio" name="turnoActividad" id="turnoMañana" value="Mañana"
+                                class="form-check-input">
+                            <label for="turnoMañana" class="form-check-label">Mañana</label>
+                        </div>
 
-            <label for="modalidad">Modalidad</label>
-            <select name="" id="modalidad">
-                <option value="">Selecciona una opcion</option>
-                <option value="Presencial">Presencial</option>
-                <option value="Online">Online</option>
-            </select>
+                        <div class="form-check">
+                            <input type="radio" name="turnoActividad" id="turnoTarde" value="Tarde"
+                                class="form-check-input">
+                            <label for="turnoTarde" class="form-check-label">Tarde</label>
+                        </div>
+                    </div>
 
-            <label for="nivel">Nivel</label>
-            <select name="" id="nivel">
-                <option value="">Selecciona una opcion</option>
-                <option value="A1">A1</option>
-                <option value="A2">A2</option>
-                <option value="B1">B1</option>
-                <option value="B2">B2</option>
-                <option value="C1">C1</option>
-            </select>
-        </fieldset>
+                    <!-- Devolución -->
+                    <div class="col-md-6">
+                        <label class="form-label">Devolución</label>
 
-        <button></button>
-    </form>
+                        <div class="form-check">
+                            <input type="radio" name="Devoluciones" id="devuelto" value="Devuelto"
+                                class="form-check-input">
+                            <label for="devuelto" class="form-check-label">Devuelto</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" name="Devoluciones" id="pendiente" value="Pendiente"
+                                class="form-check-input">
+                            <label for="pendiente" class="form-check-label">Pendiente</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botón -->
+                <div class="mt-4">
+                    <button type="button" id="botonGuardar" class="btn btn-outline-info">Enviar solicitud</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TABLA -->
+        <h2 class="mb-3">Lista de inscripciones</h2>
+
+        <div class="table-responsive sombra-suave redondeado">
+            <table class="table table-striped table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Persona</th>
+                        <th>Actividad</th>
+                        <th>Turno</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaInscripciones"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="crud.js"></script>
 
 </body>
 
