@@ -1,116 +1,233 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="estilos.css">
-
-    <title>CRUD</title>
+  <meta charset="UTF-8">
+  <title>Práctica Final — Jose Izquierdo</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-light">
+<body>
 
-    <div class="container mt-5">
+  <header>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#variables">Variables</a></li>
+      <li><a href="#operadores">Operadores</a></li>
+      <li><a href="#condicionales">Condicionales</a></li>
+      <li><a href="#bucles">Bucles</a></li>
+      <li><a href="#arrays">Arrays</a></li>
+      <li><a href="#funciones">Funciones</a></li>
+      <li><a href="#dom">DOM</a></li>
+      <li><a href="#eventos">Eventos</a></li>
+      <li><a href="#math">Math</a></li>
+      <li><a href="#strings">Strings</a></li>
+      <li><a href="#fechas">Fechas</a></li>
+      <li><a href="#formularios">Formularios</a></li>
+      <li><a href="#errores">Errores</a></li>
+    </ul>
+  </header>
 
-        <h1 class="mb-4 text-center color-primario">Gestión de Préstamos</h1>
+  <main>
 
-        <!-- CARD DEL FORMULARIO -->
-        <div class="card sombra-suave redondeado mb-4">
-            <div class="card-body">
+    <section id="inicio">
+      <h2>Práctica Final — Repaso de JavaScript</h2>
+      <p>Realizado por <strong>Jose Izquierdo</strong></p>
+      <p>Esta práctica resume los conceptos fundamentales de JavaScript mediante ejemplos y ejercicios interactivos.</p>
+    </section>
 
-                <h4 class="mb-3">Nueva solicitud</h4>
+    <section id="variables">
+      <h2>Variables y tipos</h2>
+      <p>Las variables permiten almacenar datos. Pueden ser números, textos, booleanos u otros tipos.</p>
 
-                <div class="row g-3">
+      <pre class="codigo_ejemplo">
+let edad = 20;
+const nombre = "Ana";
+let activo = true;
+      </pre>
+    </section>
 
-                    <!-- Nombre -->
-                    <div class="col-md-6">
-                        <label for="nombrePersona" class="form-label">Nombre del alumno</label>
-                        <input type="text" id="nombrePersona" class="form-control" placeholder="Escribe tu nombre">
-                    </div>
+    <section id="operadores">
+      <h2>Operadores</h2>
+      <p>Los operadores permiten realizar cálculos, comparaciones y operaciones lógicas.</p>
 
-                    <!-- Actividad -->
-                    <div class="col-md-6">
-                        <label for="actividadSeleccionada" class="form-label">Material</label>
-                        <select id="actividadSeleccionada" class="form-select">
-                            <option value="">Selecciona el material de préstamo</option>
-                            <option value="Robotica">Cargadores</option>
-                            <option value="DiseñoWeb">Ratones</option>
-                            <option value="Ofimatica">Portátiles</option>
-                            <option value="Edicion">Otros</option>
-                        </select>
-                    </div>
+      <pre class="codigo_ejemplo">
+let x = 10;
+let y = 3;
+console.log(x + y);
+console.log(x > y);
+      </pre>
+    </section>
 
-                    <!-- Turno -->
-                    <div class="col-md-6">
-                        <label class="form-label">Turno</label>
+    <section id="condicionales">
+      <h2>Condicionales</h2>
+      <p>Los condicionales permiten ejecutar código solo cuando se cumple una condición.</p>
 
-                        <div class="form-check">
-                            <input type="radio" name="turnoActividad" id="turnoMañana" value="Mañana"
-                                class="form-check-input">
-                            <label for="turnoMañana" class="form-check-label">Mañana</label>
-                        </div>
+      <pre class="codigo_ejemplo">
+let nota = 6;
+if (nota >= 5) console.log("Aprobado");
+      </pre>
 
-                        <div class="form-check">
-                            <input type="radio" name="turnoActividad" id="turnoTarde" value="Tarde"
-                                class="form-check-input">
-                            <label for="turnoTarde" class="form-check-label">Tarde</label>
-                        </div>
-                    </div>
+      <div class="bloque_interactivo">
+        <input type="number" id="notaInput">
+        <button id="botonNota">Comprobar</button>
+        <p id="resultadoNota"></p>
+      </div>
+    </section>
 
-                    <!-- Devolución -->
-                    <div class="col-md-6">
-                        <label class="form-label">Devolución</label>
+    <section id="bucles">
+      <h2>Bucles</h2>
+      <p>Los bucles permiten repetir instrucciones varias veces de forma automática.</p>
 
-                        <div class="form-check">
-                            <input type="radio" name="Devoluciones" id="devuelto" value="Devuelto"
-                                class="form-check-input">
-                            <label for="devuelto" class="form-check-label">Devuelto</label>
-                        </div>
+      <pre class="codigo_ejemplo">
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+      </pre>
 
-                        <div class="form-check">
-                            <input type="radio" name="Devoluciones" id="pendiente" value="Pendiente"
-                                class="form-check-input">
-                            <label for="pendiente" class="form-check-label">Pendiente</label>
-                        </div>
-                    </div>
+      <div class="bloque_interactivo">
+        <input type="number" id="numBucles">
+        <button id="botonBucles">Generar</button>
+        <ul id="listaBucles"></ul>
+      </div>
+    </section>
 
-                </div>
+    <section id="arrays">
+      <h2>Arrays</h2>
+      <p>Un array permite almacenar varios valores en una sola variable.</p>
 
-                <!-- Botón -->
-                <div class="mt-4">
-                    <button type="button" id="botonGuardar" class="btn btn-outline-info">Enviar solicitud</button>
-                </div>
+      <pre class="codigo_ejemplo">
+let frutas = ["manzana", "plátano", "naranja"];
+console.log(frutas[0]);
+      </pre>
+    </section>
 
-            </div>
-        </div>
+    <section id="funciones">
+      <h2>Funciones</h2>
+      <p>Las funciones permiten agrupar código reutilizable que se puede ejecutar cuando se necesite.</p>
 
-        <!-- TABLA -->
-        <h2 class="mb-3">Lista de inscripciones</h2>
+      <pre class="codigo_ejemplo">
+function sumar(a, b) {
+  return a + b;
+}
+      </pre>
+    </section>
 
-        <div class="table-responsive sombra-suave redondeado">
-            <table class="table table-striped table-bordered align-middle">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Persona</th>
-                        <th>Actividad</th>
-                        <th>Turno</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="cuerpoTablaInscripciones"></tbody>
-            </table>
-        </div>
+    <section id="dom">
+      <h2>DOM</h2>
+      <p>El DOM permite acceder y modificar elementos HTML desde JavaScript.</p>
 
-    </div>
+      <pre class="codigo_ejemplo">
+document.getElementById("titulo").textContent = "Nuevo texto";
+      </pre>
 
-    <script src="crud.js"></script>
+      <div class="bloque_interactivo">
+        <p id="textoDom">Este texto se puede cambiar.</p>
+        <button id="botonDom">Cambiar texto</button>
+      </div>
+    </section>
 
+    <section id="eventos">
+      <h2>Eventos</h2>
+      <p>Los eventos permiten ejecutar código cuando el usuario interactúa con la página, como por ejemplo al hacer clic</p>
+      <pre class="codigo_ejemplo">
+elemento.addEventListener("click", () => {});
+      </pre>
+
+      <div class="bloque_interactivo">
+        <div id="cajaEvento"></div>
+      </div>
+    </section>
+
+    <section id="math">
+      <h2>Math</h2>
+      <p>El objeto Math ofrece funciones matemáticas como redondeos y generación de números aleatorios.</p>
+
+      <pre class="codigo_ejemplo">
+Math.random();
+Math.floor();
+      </pre>
+
+      <div class="bloque_interactivo">
+        <button id="botonAleatorio">Generar número</button>
+        <p id="resultadoAleatorio"></p>
+      </div>
+    </section>
+
+    <section id="strings">
+      <h2>Strings</h2>
+      <p>Los strings representan texto y permiten realizar operaciones como mayúsculas, búsqueda o reemplazo.</p>
+
+      <pre class="codigo_ejemplo">
+let nombre = "María";
+console.log(nombre.toUpperCase());
+      </pre>
+    </section>
+
+    <section id="fechas">
+      <h2>Fechas</h2>
+      <p>El objeto Date permite trabajar con fechas y horas.</p>
+
+      <pre class="codigo_ejemplo">
+let ahora = new Date();
+console.log(ahora.getFullYear());
+      </pre>
+    </section>
+
+    <section id="formularios">
+      <h2>Formularios (CRUD)</h2>
+      <p>Este formulario permite añadir, editar y borrar inscripciones usando un CRUD básico.</p>
+
+      <div class="bloque_interactivo">
+
+        <label>Nombre:</label>
+        <input type="text" id="nombrePersona">
+
+        <label>Actividad:</label>
+        <select id="actividadSeleccionada">
+          <option value="">Selecciona una actividad</option>
+          <option value="Fútbol">Fútbol</option>
+          <option value="Natación">Natación</option>
+          <option value="Baloncesto">Baloncesto</option>
+        </select>
+
+        <label>Turno:</label>
+        <label><input type="radio" name="turnoActividad" value="Mañana"> Mañana</label>
+        <label><input type="radio" name="turnoActividad" value="Tarde"> Tarde</label>
+
+        <label>¿Requiere devolución?</label>
+        <label><input type="radio" name="Devoluciones" value="Sí"> Sí</label>
+        <label><input type="radio" name="Devoluciones" value="No"> No</label>
+
+        <button id="botonGuardar">Añadir inscripción</button>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Actividad</th>
+              <th>Turno</th>
+              <th>Devolución</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTablaInscripciones"></tbody>
+        </table>
+
+      </div>
+    </section>
+
+    <section id="errores">
+      <h2>Errores comunes</h2>
+      <p>Errores típicos al programar, como confundir igualdad débil con estricta.</p>
+
+      <pre class="codigo_ejemplo">
+console.log(5 == "5");
+console.log(5 === "5");
+      </pre>
+    </section>
+
+  </main>
+
+  <script src="scripts.js"></script>
 </body>
-
 </html>
